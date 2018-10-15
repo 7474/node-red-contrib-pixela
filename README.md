@@ -30,4 +30,8 @@ Grass growing per deploying "Flow".
 
 ![Sample Flow](./docs/images/sample-flow.png)
 
+----
+
+This is the number of Koudenpa's deployment to Node-RED by Flow above.
+
 ![Sample Graph](https://pixe.la/v1/users/koudenpa/graphs/node-red-deploy)

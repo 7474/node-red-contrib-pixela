@@ -32,7 +32,7 @@
     </dl>
     <h3>Details</h3>
     <p>Call "Pixela API" set in the "Path" property and output the result.</p>
-    <p>Set the "Path" property to a value after <code>/v1/users/<username></code>.</p>
+    <p>Set the "Path" property to a value after <code>/v1/users/&lt;username&gt;</code>.</p>
     <p>Set the parameter corresponding to "Path" to <code>msg.payload</code>.</p>
     <p>Refer to <a href="https://pixe.la/" target="_blank">"Pixela API Reference"</a> for details of each path and parameters and input/output format.</p>
 </script>
@@ -59,10 +59,6 @@
         <label for="node-input-path"><i class="fa fa-list"></i> Path</label>
         <input type="text" id="node-input-path" placeholder="/<graphID>/<yyyyMMdd>">
     </div>
-</script>
-
-<script type="text/x-red" data-help-name="pixela">
-    <p>A simple node that converts the message payloads into all pixela characters</p>
 </script>
 
 <script type="text/x-red" data-template-name="pixela-client">

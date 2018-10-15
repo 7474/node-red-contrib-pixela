@@ -1,0 +1,26 @@
+{
+  "name": "node-red-contrib-pixela",
+  "version": "0.1.0",
+  "description": "Node-RED Node of Pixela.",
+  "scripts": {
+    "test": "mocha \"pixela/test/**/*_spec.js\""
+  },
+  "keywords": [
+    "node-red",
+    "pixela"
+  ],
+  "author": "koudenpa",
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "pixela": "pixela/pixela.js"
+    }
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "node-red": "^0.19.4",
+    "node-red-node-test-helper": "^0.1.8"
+  }
+}

@@ -1,0 +1,8 @@
+# my private files.
+memo.*
+
+# ignore
+node_modules/
+
+# XXX
+package-lock.json

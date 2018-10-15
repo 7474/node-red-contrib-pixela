@@ -1,0 +1,97 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pixela', {
+        category: 'function',
+        color: '#eeeeee',
+        defaults: {
+            name: { value: "" },
+            method: { value: "", required: true },
+            path: { value: "", required: true },
+            apiclient: { type: "pixela-client", required: true }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "pixela-color.png",
+        label: function () {
+            return this.name || "[Pixela] " + this.path;
+        }
+    });
+</script>
+<script type="text/x-red" data-help-name="pixela">
+    <p>Call Pixela API.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+       <dt>payload <span class="property-type">object</span></dt>
+       <dd>
+            API Request parameters.
+       </dd>
+    </dl>
+    <h3>Oupputs</h3>
+    <dl class="message-properties">
+       <dt>payload <span class="property-type">object</span></dt>
+       <dd>API Result object.</dd>
+    </dl>
+    <h3>Details</h3>
+    <p>Call "Pixela API" set in the "Path" property and output the result.</p>
+    <p>Set the "Path" property to a value after <code>/v1/users/<username></code>.</p>
+    <p>Set the parameter corresponding to "Path" to <code>msg.payload</code>.</p>
+    <p>Refer to <a href="https://pixe.la/" target="_blank">"Pixela API Reference"</a> for details of each path and parameters and input/output format.</p>
+</script>
+
+<script type="text/x-red" data-template-name="pixela">
+    <div class="form-row">
+        <label for="node-input-apiclient"><i class="icon-cog"></i> API Client</label>
+        <input type="text" id="node-input-apiclient" placeholder="API Client">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-tasks"></i> Method</label>
+        <select id="node-input-method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-path"><i class="fa fa-list"></i> Path</label>
+        <input type="text" id="node-input-path" placeholder="/<graphID>/<yyyyMMdd>">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="pixela">
+    <p>A simple node that converts the message payloads into all pixela characters</p>
+</script>
+
+<script type="text/x-red" data-template-name="pixela-client">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="icon-tag"></i> UserName</label>
+        <input type="text" id="node-config-input-username">
+    </div>
+    <div class="form-row">
+        <label for="node-input-token"><i class="icon-tag"></i> Token</label>
+        <input type="password" id="node-config-input-token">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('pixela-client', {
+        category: 'config',
+        defaults: {
+            name: { value: "" }
+        },
+        credentials: {
+            username: { type: "text" },
+            token: { type: "password" }
+        },
+        label: function () {
+            return this.name + " [" + this.id + "]" || this.id;
+        }
+    });
+</script>

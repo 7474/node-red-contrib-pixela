@@ -18,21 +18,22 @@
 </script>
 <script type="text/x-red" data-help-name="pixela">
     <p>Call Pixela API.</p>
-    <h3>Inputs</h3>
-    <dl class="message-properties">
-       <dt>payload <span class="property-type">object</span></dt>
-       <dd>
-            API Request parameters.
-       </dd>
-    </dl>
-    <h3>Oupputs</h3>
-    <dl class="message-properties">
-       <dt>payload <span class="property-type">object</span></dt>
-       <dd>API Result object.</dd>
-    </dl>
+    <p>The input message contains the following properties:</p>
+    <ul>
+        <li><code>path</code> is request path</li>
+        <li><code>method</code> is HTTP method of the request</li>
+        <li><code>payload</code> is sent as the body of the request</li>
+    </ul>
+    <p>The output message contains the following properties:</p>
+    <ul>
+        <li><code>payload</code> is the body of the response</li>
+    </ul>
+    <p>If the response is not normal, report an error.</p>
     <h3>Details</h3>
-    <p>Call "Pixela API" set in the "Path" property and output the result.</p>
+    <p>Call "Pixela API" and output the result.</p>
+    <p>Set the "Method" property to a HTTP method.</p>
     <p>Set the "Path" property to a value after <code>/v1/users/&lt;username&gt;</code>.</p>
+    <p>"Method" and "Path" property can override in an incoming message on <code>msg.method</code> and <code>msg.path</code>.</p>
     <p>Set the parameter corresponding to "Path" to <code>msg.payload</code>.</p>
     <p>Refer to <a href="https://pixe.la/" target="_blank">"Pixela API Reference"</a> for details of each path and parameters and input/output format.</p>
 </script>

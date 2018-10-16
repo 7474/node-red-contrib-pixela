@@ -2,6 +2,10 @@
   "name": "node-red-contrib-pixela",
   "version": "0.1.0",
   "description": "Node-RED Node of Pixela.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7474/node-red-contrib-pixela.git"
+  },
   "scripts": {
     "test": "mocha \"pixela/test/**/*_spec.js\""
   },

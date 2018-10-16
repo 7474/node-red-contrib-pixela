@@ -37,3 +37,21 @@ Grass growing per deploying "Flow".
 This is the number of Koudenpa's deployment to Node-RED by Flow above.
 
 ![Sample Graph](https://pixe.la/v1/users/koudenpa/graphs/node-red-deploy)
+
+----
+
+Can override Node parameter with an input message.
+
+![Sample Flow](./docs/images/override-params.png)
+
+Sample function node:
+```javascript
+msg.method = "POST";
+msg.path = "/graphs/test-graph";
+msg.payload = {
+    date: "20181016",
+    quantity: "7474"
+};
+
+return msg;
+```

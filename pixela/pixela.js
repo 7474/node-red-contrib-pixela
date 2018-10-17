@@ -12,7 +12,7 @@ module.exports = function (RED) {
     node.debug(config);
 
     node.on('input', function (msg) {
-      node.debug(JSON.stringify(msg));
+      //node.debug(JSON.stringify(msg));
       var method = msg.method || node.method;
       var path = msg.path || node.path;
       node.apiclient.callApi(method, path, msg.payload)
